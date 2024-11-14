@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQuery 선택된 요소 접근</title>
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <!--
+    날짜 : 24.11.14
+    내용 : getter 메서드와 setter 메서드
+  -->
+</head>
+<body>
+  <h2>선택된 요소에 접근</h2>
+  <hr>
+  <h3>gtter 메서드와 setter 메서드</h3>
+  <p>
+    선택자에 의해 선택된 요소의 값을 읽거나 설정하기 위해서는 제이쿼리 메서드를 통해 해당 요소에 접근해야 한다.<br><br>
+    getter 메서드는 선택된 요소에 접근하여 그 값을 읽어오기 위한 메서드이다.<br>
+    이러한 getter 메서드는 아무런 인수를 전달하지 않고 호출한다.<br>
+    <code>
+      $(function(){
+        $("button").on("click", function(){
+          var newText = $("h1").html();
+          $("#text").html(newText);
+        })
+      })
+    </code><br>
+    <code>
+      $(function(){
+        <!-- getter : 필드의 값을 읽어옴 -->
+        $("#submitBtn").on("click",function(){
+          var userName = $("#nameInput").val();
+        })
+        <!-- setter : 읽어온 값을 이용해 환영 메시지를 설정-->
+         $("#greetingMessage").html("Hello," + username + "!");
+      })
+    </code>
+  </p>
+  <hr>
+  <h3>메서드 체이닝(method chaining)</h3>
+  <p>
+    getter 메서드는 선택된 요소의 값을 읽어서 그 값을 반환한다.<br>
+    만약 선택된 요소가 여러 개 존재하면, getter 메서드는 가장 먼저 '첫 번째 요소'의 값만을 반환할 것이다.<br>
+    그리고 선택된 모든 요소에 접근할 수 있는 또 다른 제이쿼리 객체를 반환한다.<br><br>
+    
+    이렇게 반환된 제이쿼리 객체를 이용하면 세미콜론을 사용하지 않고도, 곧바로 다른 제이쿼리 메서드를 호출할 수 있다.<br>
+
+    이런 방식으로 여러 개의 메서드가 연속으로 호출되는 것을 메서드 체이닝이라고 한다.<br>
+    <code>
+      $(function(){
+        $("button").on("click", function(){
+          <!-- 
+              id가 "list"인 요소의 자손 중에서 <li> 요소를 모두 선택한 후에,
+              그 중에서 두 번째 요소의 값을 설정함
+          -->
+        $("#list").find("li").eq(1).html("두 번째 아이템 선택");
+        })
+      })
+    </code>
+
+  </p>
+</body>
+</html>

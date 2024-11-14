@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>제이쿼리 선택자</title>
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <!--
+    날짜 : 24.11.14
+    내용 : 제이쿼리 선택자
+  -->
+<script>
+  $(function(){
+    $("p").on("click", function(){       // <p>요소를 모두 선택함.
+      $("span").css("fontSize", "28px"); // <span>요소를 모두 선택함.
+    })
+  })
+</script>
+</head>
+<body>
+  <h2>CSS 선택자</h2>
+  <hr>
+  <h3>요소의 선택</h3>
+  <p>
+    제이쿼리를 사용하면 손쉽게 HTML 요소를 선택하여, 선택된 요소에 특정 동작을 설장할 수 있다.<br>
+    제이쿼리에서는 요소를 선택하기 위해 대부분의 CSS 선택자뿐만 아니라 몇몇 비표준 선택자까지 제공하고 있다.<hr>
+  </p>
+  <h3>CSS 선택자를 이용한 선택</h3>
+  <p>
+    제이쿼리에서는 CSS 선택자를 사용하여 HTML 요소를 선택할 수 있다.<br><br>
+    태그 이름을 사용하여 같은 태그 이름을 가지는 HTML 요소를 모두 선택할 수 있다.<br>
+    이것은 자바스크립트의 getElementByTagName() 메서드와 같은 동작을 한다.<br>
+    <code>$("span").css("fontSize", "28px");</code> <br><br>
+
+    이것은 자바스크립트의 getElementById() 메서드와 같은 동작을 한다.<br>
+    <code>$("#jq").css("border", "2px solid orange")</code><br><br>
+
+    이것은 자바스크립트의 getElementsByClassNAme() 메서드와 같은 동작을 한다.<br>
+    <code>$(.jq).css("backgroundColor","lightgray")</code><br><br>
+
+    속성(attribute)을 사용하여 속성이 조건에 맞는 특정 HTML 요소를 선택할 수 있다.<br>
+    <code>$("img[alt='flower']").arr("src", "/examples/images/img_monalisa.png");</code>
+  </p>
+  <hr>
+  
+  <h3>제이쿼리 선택자</h3>
+  <p>
+    제이쿼리에서는 CSS 선택자 뿐만 아니라 몇몇 비표준 선택자까지도 사용할 수 있다.<br>
+    이러한 비표준 선택자를 사용하면 선택한 요소를 저장하거나, 그 결과에 대해 필터링까지 할 수 있다.<br><br>
+
+    다음 예제는 문서 내의 모든 li요소를 선택하여 변수에 저장한 후, 해당 변수를 사용하는 예제이다.<br>
+    <code>
+      $(function(){
+        var items = $("li");
+
+        $("button").on("click",function(){
+          $("#len").text("저장된 li요소의 총 개수는" + items.length + "개 입니다.");
+        })
+      })
+    </code> 
+
+    
+  </p>
+
+  <h3>선택한 요소의 필터링</h3>
+  <p>
+    제이쿼리에서는 선택한 요소 중에서 더욱 세분화된 선택을 하기 위한 필터링을 진행할 수 있다.
+    <br>
+    <code>
+      $(function() {
+        $("button").on("click", function(){
+          $("li:has(span)").text("span 요소를 가지고 있습니다.");
+        })
+      })
+    </code>
+    <h3>필터링 요소</h3>
+    <table border="1">
+      <tr>
+        <th>선택자</th>
+        <th>설명</th>
+      </tr>
+      <tr>
+        <td>:eq(n)</td>
+        <td >선택한 요소 중에서 인덱스가 n인 요소를 선택</td>
+      </tr>
+      <tr>
+        <td>:gt(n)</td>
+        <td>선택한 요소 중에서 인덱스가 n보다 큰 요소 모두 선택</td>
+      </tr>
+      <tr>
+        <td>:lt(n)</td>
+        <td>선택한 요소 중에서 인덱스가 n보다 작은 요소 모두 선택</td>
+      </tr>
+      <tr>
+        <td>:even(n)</td>
+        <td>선택한 요소 중에서 인덱스가 짝수인 요소를 모두 선택</td>
+      </tr>
+      <tr>
+        <td>:odd(n)</td>
+        <td>선택한 요소 중에서 인덱스가 홀수인 요소를 모두 선택</td>
+      </tr>
+      <tr>
+        <td>:first(n)</td>
+        <td>선택한 요수 중에서 첫 번째 요소를 선택</td>
+      </tr>
+      <tr>
+        <td>:last(n)</td>
+        <td>선택한 요소 중에서 마지막 요소를 선택</td>
+      </tr>
+      <tr>
+        <td>:animated</td>
+        <td>선택한 요소 중에서 애니메이션 효과가 실행중인 요소를 모두 선택</td>
+      </tr>
+      <tr>
+        <td>:header</td>
+        <td>선택한 요소 중에서 h1부터 h6까지의 요소를 모두 선택</td>
+      </tr>
+      <tr>
+        <td>:lang(언어)</td>
+        <td>선택한 요소 중에서 지정한 언어의 요소를 모두 선택</td>
+      </tr>
+      <tr>
+        <td>:not(선택자)</td>
+        <td>선택한 요소 중에서 지정한 선택자와 일치하지 않는 요소를 모두 선택</td>
+      </tr>
+      <tr>
+        <td>:root</td>
+        <td>선택한 요소 중에서 최상위 루트 요소를 선택</td>
+      </tr>
+      <tr>
+        <td>:target</td>
+        <td>선택한 요소 중에서 웹페이지 URI의 fragment 식별자와 일치하는 요소를 모두 선택</td>
+      </tr>
+      <tr>
+        <td>:contains(텍스트)</td>
+        <td>선택한 요소 중에서 지정한 텍스트를 포함하는 요소를 모두 선택</td>
+      </tr>
+      <tr>
+        <td>has(선택자)</td>
+        <td>선택한 요소 중에서 지정한 선택자와 일치하는 자손 요소를 갖는 요소를 모두 선택</td>
+      </tr>
+      <tr>
+        <td>:empty</td>
+        <td>선택한 요소 중에서 자식 요소를 가지고 있지 않는 요소를 모두 선택</td>
+      </tr>
+      <tr>
+        <td>:parent</td>
+        <td>선택한 요소 중에서 자식 요소를 가지고 있는 요소를 모두 선택</td>
+      </tr>
+    </table>
+  </p>
+  <h3>input 요소의 선택</h3>
+  <p>
+    제이쿼리에서는 입력 약식에 관련된 특정 요소를 손쉽게 선택할 수 있다.<br>
+    <code>
+      $(function(){
+        $("button").on("click",function(){
+          // 체크되어 있는 요소를 모두 선택함
+          $(":checked").next().text("체크되어있는 요소입니다.");
+        })
+      })
+    </code>
+
+    <h3> 인풋요소 선택자</h3>
+    <table border="1">
+      <tr>
+        <th>선택자</th>
+        <th>설명</th>
+      </tr>
+      <tr>
+        <td>:button</td>
+        <td>type 속성값이 "button"인 요소를 모두 선택</td>
+      </tr>
+      <tr>
+        <td>:checkbox</td>
+        <td>type 속성값이 "checkbox"인 요소를 모두 선택</td>
+      </tr>
+      <tr>
+        <td>:file</td>
+        <td>type 속성값이 "file"인 모든 요소를 선택</td>
+      </tr>
+      <tr>
+        <td>:image</td>
+        <td>type 속성값이 "image"인 모든 요소를 선택</td>
+      </tr>
+      <tr>
+        <td>:password</td>
+        <td>type 속성값이 "password"인 요소를 모두 선택</td>
+      </tr>
+      <tr>
+        <td>:radio</td>
+        <td>type 속성값이 "radio"인 요소를 모두 선택</td>
+      </tr>
+      <tr>
+        <td>:reset</td>
+        <td>type 속성값이 "reset"인 요소를 모두 선택</td>
+      </tr>
+      <tr>
+        <td>:submit</td>
+        <td>type 속성값이 "submit"인 요소를 모두 선택</td>
+      </tr>
+      <tr>
+        <td>:text</td>
+        <td>type 속성값이 "text"인 요소를 모두 선택</td>
+      </tr>
+      <tr>
+        <td>:input</td>
+        <td>input, textarea, select, button 요소를 모두 선택</td>
+      </tr>
+      <tr>
+        <td>:checked</td>
+        <td>type 속성값이 checkbox 또는 radio인 요소 중에서 체크되어있는 요소를 모두 선택</td>
+      </tr>
+      <tr>
+        <td>:selected</td>
+        <td>option 요소 중에서 선택된 요소를 모두 선택</td>
+      </tr>
+      <tr>
+        <td>:focus</td>
+        <td>현재 포커스가 가지고 있는 요소를 선택</td>
+      </tr>
+      <tr>
+        <td>:disable</td>
+        <td>비활성화되어있는 요소를 모두 선택</td>
+      </tr>
+      <tr>
+        <td>:enable</td>
+        <td>활성화되어있는 요소를 모두 선택</td>
+      </tr>
+    </table>
+  </p>
+  
+
+</body>
+</html>
