@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>요소의 추가</title>
+</head>
+<body>
+  <h2>요소의 추가</h2>
+  <hr>
+  <h3>기존 요소 내부에 추가</h3>
+  <p>
+    다음 메서드를 사용하면 기존 요소의 내부에 새로운 요소나 콘텐츠를 추가할 수 있다.
+    <ol>
+      <li>.append()</li>
+      <li>.prepend()</li>
+      <li>.appendTo()</li>
+      <li>.prependTo()</li>
+    </ol>
+  </p>
+  <hr>
+  <h3>1. .append()메서드</h3>
+  <p>
+    .append() 메서드는 선택한 요소의 '마지막'에 새로운 요소나 콘텐츠를 추가한다.<br>
+    <code>
+      $(function(){
+        $("button").on("click", function(){
+          $("#list").append("&lt;li&gt;새로 추가된 아이템&lt;/li&gt")
+        })
+      })
+    </code>
+  </p>
+ 
+  <h3>2. .appendTo()</h3>
+  <p>
+    .appendTo()메서드는 선택한 요소를 해당 요소의 마지막에 삽입한다.<br>
+    그 동작은 .append() 메서드와 같지만, 소스(source)와 타겟(target)의 위치가 서로 반대이다.<br>
+    <code>
+      $(function(){
+        $("#firstBtn").on("click", func)
+      })
+      <!-- firstBtn을 func에 추가 -->
+    </code>
+  </p>
+  <hr>
+  <h3>3. .pretend()</h3>
+  <p>
+    .pretend() 메서드는 선택한 요소의 시작 부분에 새로운 요소나 콘텐츠를 추가한다.<br>
+    <code>
+      $(function(){
+        $("#list> #li2"").pretend("&lt;li&gt; id="li1" 앞에 새로 추가된 요소 &lt;li&gt;")
+      })
+    </code>
+  </p>
+  <h3>4. .pretendTo()</h3>
+  <p>
+    .pretendTo 메서드는 선택한 요소의 해당 요소의 시작 부분에 삽입한다.<br>
+    <code>
+      #(function(){
+        $("&lt;li&gt; id="li1" 앞에 새로 추가할 요소 &lt;li&gt;").pretendTo("#list > #li2");
+      })
+    </code>
+  </p>
+  <hr>
+  <h3> 기존 요소 외부에 추가</h3>
+  <p>
+    다음 메서드를 사용하면 기존 요소의 앞이나 뒤에 새로운 요소나 컨텐츠를 추가할 수 있다.
+    <ol>
+      <li>.before()</li>
+      <li>.after()</li>
+      <li>.insertBefore()</li>
+      <li>.insertAfter()</li>
+    </ol>
+  </p>
+  <hr>
+  
+</body>
+</html>
