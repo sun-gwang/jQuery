@@ -4,3 +4,4 @@
 ### <a href="https://sun-gwang.github.io/jQuery/3.6jQuerySelecter.html">3.6jQuerySelecter.html</a>
 ### <a href="https://sun-gwang.github.io/jQuery/3.8jQueryRead.html">3.8jQueryRead.html</a>
 ### <a href="https://sun-gwang.github.io/jQuery/4.9jQeuryAppend.html">4.9jQeuryAppend.html</a>
+### <a href="https://sun-gwang.github.io/jQuery/$.ajax.html">$.ajax.html</a>
