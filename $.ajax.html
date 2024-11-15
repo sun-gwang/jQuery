@@ -41,8 +41,8 @@
         $("&lt;h1&gt;").text(json.title).appendTo("body");    <br>
         $("&ltdiv class=\"content\"&gt;").html(json.html).appendTo("body"); <br>
       }).fail(function(xhr, status, errorThrown){ <br>
-        $("#text").html("오류가 발생했습니다.<br>")
-        .append("오류명" + errorThrown + "<br>")
+        $("#text").html("오류가 발생했습니다.")<br>
+        .append("오류명" + errorThrown)<br>
         .append("상태:" + status);<br>
       })  <br>
     </code>
