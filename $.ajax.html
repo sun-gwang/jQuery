@@ -47,5 +47,54 @@
       })  <br>
     </code>
   </p>
+  <hr>
+    <h3>load()</h3>
+    <p>
+        load() 메서드는 선택한 요소에서 호출하는 유일한 제이쿼리 Ajax() 메서드이다. <br><br>
+        load() 메서드는 외부 서버에서 데이터를 읽은 후, 읽어 들인 HTML 코드를 선택한 요소에 배치한다.<br>
+        또한, 선택자를 URL 주소와 함께 전송하면, 읽어들인 HTML 코드 중에서 선택자와 일치하는 요소만을 배치한다.
+    </p>
+    <code>
+        $("#requestBtn").on("click", function(){
+            <!--URL 주소에 존재하는 HTML 코드에서 <li> 요소를 읽은 후에 id가 "list"인 요소에 배치함.-->
+            $("#list").load("/examples/tryit/htmlexample/jq_elementTraversing_etc_01.html li");
+        })
+    </code>
+    <hr>
+    <h3>Ajax 메서드</h3>
+    <p>
+        제이쿼리는 $.ajax() 메서드 뿐 아니라 Ajax와 관련된 다양한 메서드를 제공하고 있다.
+        <table border="1">
+            <tr>
+                <th>메서드</th>
+                <th>설명</th>
+            </tr>
+            <tr>
+                <td>$.ajax()</td>
+                <td>비동기식 Ajax를 이용하여 HTTP 요청을 전송함</td>
+            </tr>
+            <tr>
+                <td>$.get()</td>
+                <td>전달받은 주소로 GET 방식의 HTTP 요청을 전송함</td>
+            </tr>
+            <tr>
+                <td>$.post()</td>
+                <td>전달받은 주소로 POST 방식의 HTTP 요청을 전송함</td>
+            </tr>
+            <tr>
+                <td>$.getScript()</td>
+                <td> 웹페이지에 스크립트를 추가함.</td>
+            </tr>
+            <tr>
+                <td>$.getJSON()</td>
+                <td>전달받은 주소로 GET 방식의 HTTP 요청을 전송하여, 응답으로 JSON 파일을 전송받음</td>
+            </tr>
+            <tr>
+                <td>.load()</td>
+                <td>서버에서 데이터를 읽은 후, 읽어들인 HTML 코드를 선택한 요소에 배치함.</td>
+            </tr>
+        </table>
+    
+    </p>
 </body>
 </html>
