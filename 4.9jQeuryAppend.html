@@ -73,6 +73,48 @@
     </ol>
   </p>
   <hr>
-  
+  <h3>.before()</h3>
+  <p>
+    .before()메서드는 선택한 요소의 바로 앞에 새로운 요소나 컨텐츠를 추가한다.<br>
+  </p>
+  <code>
+    $(function(){
+      $("button").on("click", function(){
+        <!--id가 "firstRow"인 요소의 바로 앞에 새로운 <tr> 요소를 추가-->
+        $("#firstRow").before("&lt;tr&gt;&lt;td&gt;새로운 행 추가!&lt;/tr&gt;!&lt;/td&gt;);
+      });
+    })
+  </code>
+  <h3>.insertBefore()</h3>
+  <p>
+    .insertBefore() 메서드는 선택한 요소를 해당요소의 앞에 삽입<br>
+    그 동작은 before()메서드와 같지만, 소스(source)와 타겟(target)의 위치가 서로 반대이다.
+  </p>
+  <code>
+    $(function(){
+      $("button").on("click", function(){
+        <!-- id가 "selectColumn"인 요소의 바로 앞에 새로운 <td>요소를 추가함 "-->
+        $(&lt;td&gt;새로운 셀입니다&lt;td&gt;).insertBefore("#selectColumn");
+      })
+    })
+  </code>
+  <hr>
+  <h3>.after()</h3>
+  <p>
+    .after()메서드는 선택한 요소의 바로 뒤에 새로운 요소나 콘텐츠를 추가한다.
+  </p>
+  <code>
+    $(function(){
+      $("button").on("click",function(){
+        <!-- id가 "firstRow인 요소의 바로 뒤에 새로운 tr 요소 추가"-->
+         $("firstRow").after(&lt;tr&gt;&lt;td&gt; 새로운 행 &lt;/td&gt;&lt;/tr&gt;)
+      })
+    })
+  </code>
+  <h3>insertAfter()</h3>
+  <p>
+    .insertAfter()메서드는 선택한 요소를 '해당 요소의 뒤에' 삽입한다.<br>
+    그 동작은 .after 메서드와 같지만, 소스(source)와 타겟(target)의 위치가 서로 반대이다.
+  </p>
 </body>
 </html>
